@@ -45,7 +45,7 @@ ZSH_THEME="pygmalion"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -78,8 +78,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Load dotfiles from the dotfile repo
-source ~/dotfiles/.bashrc
+# Load dotfiles symlinked from the repo
+source ~/.bashrc
 
 # User configuration
 
