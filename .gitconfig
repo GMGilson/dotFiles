@@ -3,3 +3,6 @@
 	name = Grant Gilson
 [alias]
 	stat = status
+
+[core]
+	editor = vim
