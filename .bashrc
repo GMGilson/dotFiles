@@ -14,7 +14,7 @@ ulimit -c unlimited
 #bash aliases and functions
 alias clip='xclip -sel clip'
 alias cmakeinit='touch CMakeLists.txt'
-alias mat22AL='ssh -x m22als6-6@point.math.ucdavis.edu'
+alias grep='grep --color'
 
 #Grant bashrc end;
 
