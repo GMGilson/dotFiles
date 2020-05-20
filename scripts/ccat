@@ -1,0 +1,6 @@
+#Function to color pring using python pygments
+ccat() {
+pygmentize -g $1 | perl -e 'print ++$i." $_" for <>'
+}
+
+ccat $1
