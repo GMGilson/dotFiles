@@ -73,6 +73,7 @@ plugins=(
 	z
 	colored-man-pages
 	extract
+	zsh-syntax-highlighting
 	)
 
 source $ZSH/oh-my-zsh.sh
