@@ -9,7 +9,6 @@ DIR=$(cd `dirname $0` && pwd)
 
 ln -sf $DIR/.bashrc ~/.bashrc
 ln -sf $DIR/.vimrc ~/.vimrc
-ln -sf $DIR/.inputrc ~/.inputrc
 ln -sf $DIR/.zshrc ~/.zshrc
 ln -sf $DIR/.gitconfig ~/.gitconfig
 
