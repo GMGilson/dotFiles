@@ -24,7 +24,8 @@ if cargo -V > /dev/null; then
 fi
 
 # If go is installed on the system export go tools
-if go version > /dev/null; then
+if [ -d /usr/local/go/bin ]
+then
 	export PATH=$PATH:/usr/local/go/bin
 fi
 # Remap capsLock to ctrl
