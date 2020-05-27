@@ -22,6 +22,11 @@ alias top='ytop'
 if cargo -V > /dev/null; then
 	source $HOME/.cargo/env
 fi
+
+# If go is installed on the system export go tools
+if go version > /dev/null; then
+	export PATH=$PATH:/usr/local/go/bin
+fi
 # Remap capsLock to ctrl
 setxkbmap -option ctrl:nocaps
 
