@@ -19,7 +19,7 @@ alias top='ytop'
 #Grant bashrc end;
 
 #If rust is install on the system load cargo
-if cargo -V > /dev/null; then
+if [ -d ~/.cargo/bin ]; then
 	source $HOME/.cargo/env
 fi
 
