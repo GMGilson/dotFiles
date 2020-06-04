@@ -3,6 +3,7 @@
 	name = Grant Gilson
 [alias]
 	stat = status
+	appendIgnore = "! git ls-files . --exclude-standard --others >> .gitignore"
 
 [core]
 	editor = vim
