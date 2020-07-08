@@ -15,12 +15,15 @@ preview(){
 			
 			;;
 
-		*html)
+		*.html)
 			firefox $1
 			;;
-		*pdf)
+		*.pdf)
 			firefox $1
 			;;
+		*)
+			echo "Unsupported File type $1, consider adding it to the script!"
+
 	esac
 }
 
