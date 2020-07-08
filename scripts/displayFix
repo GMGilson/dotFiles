@@ -1,0 +1,22 @@
+#! /usr/bin/python3
+import subprocess
+
+
+def main():
+    xrandr = subprocess.Popen(("xrandr", "--query"), stdout=subprocess.PIPE)
+    displayInfo = subprocess.check_output(("grep", "DP-3"), stdin=xrandr.stdout)
+    if "disconnected" in str(displayInfo):
+        print("Portrait Display 3 not detected exiting...")
+        exit(0)
+
+    print("Portrait Display 3 detected, rotating...")
+    exitCode = subprocess.run(('xrandr', '--output', 'DP-3', '--rotate', 'left')).returncode
+    if not exitCode:
+        print("Portrait Display 3 rotated successfully, exiting...")
+        exit(0)
+    else:
+        print(f"FAILED to rotate DP-3, exit code: {exitCode}")
+
+
+if __name__ == "__main__":
+    main()

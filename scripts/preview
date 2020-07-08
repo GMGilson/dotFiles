@@ -1,0 +1,27 @@
+
+# Deps 
+# grip - https://pypi.org/project/grip/
+# restview - https://pypi.org/project/restview/
+# firefox - https://www.mozilla.org/
+
+preview(){
+	case $1 in
+		*.md)
+			grip --pass '7a6067a13cdcf8fdaa3fd7e9e089366b4ee8ccc7' $1
+			;;
+
+		*.rst)
+			restview $1
+			
+			;;
+
+		*html)
+			firefox $1
+			;;
+		*pdf)
+			firefox $1
+			;;
+	esac
+}
+
+preview $1
