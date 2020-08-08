@@ -76,6 +76,9 @@ plugins=(
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	fzf
+	docker
+	pip
+	zsh-completions
 	)
 
 source $ZSH/oh-my-zsh.sh
