@@ -3,10 +3,13 @@
 
 #Adding directories to PATH
 export PATH="$PATH:$HOME/dotfiles/scripts"
-
+source "$HOME/dotfiles/scripts/gh_completion.sh"
 #bring vim as default editor
 export EDITOR=vim
 
+if command -v pydoc3 > /dev/null; then
+	alias pydoc='pydoc3'
+fi
 
 #enables core dumps on this system
 ulimit -c unlimited
@@ -31,12 +34,6 @@ if [ -d ~/.cargo/bin ]; then
 	source $HOME/.cargo/env
 fi
 
-# If go is installed on the system export go tools
-if [ -d /usr/local/go/bin ]
-then
-	export PATH=$PATH:/usr/local/go/bin
-fi
-
 # Remap capsLock to ctrl
 if command -v setxkbmap >  /dev/null; then
 	setxkbmap -option ctrl:nocaps
@@ -47,14 +44,13 @@ if [ -d $HOME/.android-studio/bin ]; then
 	export PATH=$PATH:~/.android-studio/bin
 fi
 
-if [[ $TILIX_ID ]]; then
-	source /etc/profile.d/vte.sh
+# If rstudio exists export the ide
+if [ -d "$HOME/.rstudio-1.3.1093/bin" ]; then
+	export PATH="$PATH:$HOME/.rstudio-1.3.1093/bin"
 fi
 
-# Install Ruby Gems to ~/gems
-if  command -v gem > /dev/null ; then
-	export GEM_HOME="~/gems"
-	export PATH=$PATH:~/gems/bin
+if [[ $TILIX_ID ]]; then
+	source /etc/profile.d/vte.sh
 fi
 
 if [[ -d "$HOME/.nvm" ]]; then
@@ -63,8 +59,13 @@ if [[ -d "$HOME/.nvm" ]]; then
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-# Install Ruby Gems to ~/gems
 if [[ -d "$HOME/gems" ]]; then
+	# Install Ruby Gems to ~/gems
 	export GEM_HOME="$HOME/gems"
 	export PATH="$HOME/gems/bin:$PATH"
+fi
+
+if [[ -d "$HOME/go" ]]; then
+	export GOPATH=${HOME}/go
+	export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
 fi

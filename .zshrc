@@ -10,6 +10,7 @@ export ZSH="/home/grant/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="pygmalion"
 
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -21,7 +22,7 @@ ZSH_THEME="pygmalion"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+ HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -79,6 +80,7 @@ plugins=(
 	docker
 	pip
 	zsh-completions
+	fancy-ctrl-z
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -116,3 +118,5 @@ source ~/.bashrc
 # Keybinds to have ctrl-delete and ctrl-backspace work have similar behavior to GUI's
 bindkey -M emacs '^[[3;5~' kill-word
 bindkey '^H' backward-kill-word
+
+
